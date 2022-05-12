@@ -18,6 +18,12 @@ enum BubbleNip {
   rightTop,
   rightCenter,
   rightBottom,
+  topRight,
+  topLeft,
+  topCenter,
+  bottomRight,
+  bottomLeft,
+  bottomCenter,
 }
 
 class Bubble extends StatelessWidget {
@@ -86,23 +92,23 @@ class Bubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        key: key,
-        alignment: alignment,
-        margin: margin,
-        child: CustomPaint(
-          painter: BubblePainter(
-            clipper: bubbleClipper,
-            color: color,
-            borderColor: borderColor,
-            borderWidth: borderWidth,
-            borderUp: borderUp,
-            elevation: elevation,
-            shadowColor: shadowColor,
-          ),
-          child: Container(
-            padding: bubbleClipper.edgeInsets,
-            child: child,
-          ),
-        ),
-      );
+    key: key,
+    alignment: alignment,
+    margin: margin,
+    child: CustomPaint(
+      painter: BubblePainter(
+        clipper: bubbleClipper,
+        color: color,
+        borderColor: borderColor,
+        borderWidth: borderWidth,
+        borderUp: borderUp,
+        elevation: elevation,
+        shadowColor: shadowColor,
+      ),
+      child: Container(
+        padding: bubbleClipper.edgeInsets,
+        child: child,
+      ),
+    ),
+  );
 }
